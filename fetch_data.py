@@ -35,8 +35,27 @@ EIA_SERIES = {
 }
 
 
+DEBUG = []
+
+
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
+
+
+def bh_get(url, timeout=40):
+    """Fetch a Baker Hughes page and note what came back, for troubleshooting."""
+    r = requests.get(url, headers=UA, timeout=timeout)
+    ctype = r.headers.get("content-type", "")
+    note = {"url": url, "status": r.status_code, "type": ctype, "bytes": len(r.content)}
+    if "html" in ctype or "text" in ctype:
+        txt = re.sub(r"<script.*?</script>|<style.*?</style>", " ", r.text, flags=re.S | re.I)
+        txt = re.sub(r"<[^>]+>", " ", txt)
+        note["text"] = re.sub(r"\s+", " ", txt)[:1500]
+        note["links"] = re.findall(r'href="([^"]*static-files[^"]*)"', r.text)[:12]
+    DEBUG.append(note)
+    if r.status_code != 200:
+        raise ValueError(f"{url} answered {r.status_code}")
+    return r
 
 
 # ---------------------------------------------------------------- EIA prices
@@ -76,7 +95,7 @@ def eia_latest(route, series):
 # ------------------------------------------------------- Baker Hughes rigs
 def bh_us_total():
     """US total, change and date from the summary table on the home page."""
-    html = requests.get(BH_HOME, headers=UA, timeout=40).text
+    html = bh_get(BH_HOME).text
     text = re.sub(r"<[^>]+>", " ", html)
     text = re.sub(r"&nbsp;|\s+", " ", text)
     # e.g. "U.S. 25 Sept 2026 599 +4"
@@ -106,7 +125,7 @@ def parse_bh_date(s):
 
 def bh_report_url():
     """Newest weekly report file linked from the North America page."""
-    html = requests.get(BH_NA, headers=UA, timeout=40).text
+    html = bh_get(BH_NA).text
     best = None
     for m in re.finditer(r'<a[^>]+href="([^"]*static-files/[0-9a-f\-]{36})"[^>]*>(.*?)</a>', html, re.S | re.I):
         href, label = m.group(1), re.sub(r"<[^>]+>|\s+", " ", m.group(2))
@@ -180,8 +199,7 @@ def find_row(wb, label, sheet_words):
 def bh_regions():
     url, report_date = bh_report_url()
     log("Baker Hughes report:", report_date, url)
-    r = requests.get(url, headers=UA, timeout=120)
-    r.raise_for_status()
+    r = bh_get(url, timeout=120)
     wb = openpyxl.load_workbook(io.BytesIO(r.content), read_only=True, data_only=True)
     out, found_in = {}, {}
     for key, label, words in (("permian", "Permian", ("basin",)), ("nm", "New Mexico", ("state",))):
@@ -259,6 +277,8 @@ def main():
     except Exception as e:
         data["errors"].append(f"rigs.regions: {e}")
 
+    if DEBUG and any(e.startswith("rigs") for e in data["errors"]):
+        data["debug"] = DEBUG
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w") as f:
         json.dump(data, f, indent=1)
