@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-10-01T03:44:13Z",
+ "updated": "2026-10-01T03:45:17Z",
  "prices": {
   "wti": {
    "v": 96.16,
@@ -40,7 +40,7 @@
    "url": "https://rigcount.bakerhughes.com/",
    "status": 200,
    "type": "text/html; charset=UTF-8",
-   "bytes": 18458,
+   "bytes": 18459,
    "text": " Rig Count Overview &amp; Summary Count | Baker Hughes Rig Count Skip to main navigation Rig Count &nbsp; Menu Home Rig Count Overview North America Rig Count Worldwide Rig Count US Rig Count iPhone/iPad App FAQs Email Alerts Rig Count Overview & Summary Count Rig Count Overview &amp; Summary Count Rig Count Methodology Change - Read More Questions? Connect with the rig count team. Oilfield Knowledge Center Area Last Count Count Change from Prior Count Date of Prior Count Change from Last Year Date of Last Year's Count U.S. 25 Sept 2026 599 +4 18 Sept 2026 +50 26 Sept 2025 Canada 25 Sept 2026 208 +11 18 Sept 2026 +18 26 Sept 2025 International&nbsp; August 2026 1102 +6 July 2026 +26 August 2025 Notice of Rig Count Methodology Update Effective January 2024, the methodology for calculating rig counts in the Kingdom of Saudi Arabia has been updated. From this date forward, only operating rigs within the country are included in the reported figures. This adjustment results in an increase in both the Saudi Arabia and Worldwide Rig Counts. Please note that rig count methodologies for all other countries remain unchanged. If using historical data, please download again prior periods to avoid errors. For further details, please refer to our FAQs here . Baker Hughes has issued rig counts as a service to the petroleum industry since 1944, when Baker Hughes Tool Company began weekly counts of U.S. and Canadian drilling activity. Baker Hughes initiated the monthly international rig count",
    "links": [
     "/static-files/05318aca-874f-44c1-90bf-767d8656893f"
@@ -50,7 +50,7 @@
    "url": "https://rigcount.bakerhughes.com/na-rig-count",
    "status": 200,
    "type": "text/html; charset=UTF-8",
-   "bytes": 27407,
+   "bytes": 27408,
    "text": " North America Rig Count | Baker Hughes Rig Count Skip to main navigation Rig Count &nbsp; Menu Home Rig Count Overview North America Rig Count Worldwide Rig Count US Rig Count iPhone/iPad App FAQs Email Alerts North America Rig Count North America Rig Count Rig Count Methodology Change - Read More Questions? Connect with the rig count team. Oilfield Knowledge Center Reference Maps of North America Oil &amp; Gas Shale Plays (eia.gov) Due to the U.S. holiday on Thursday, this week\u2019s North America rig count will be released at noon Central Time on Wednesday, November 27, 2019. --> Date Title 09/25/26 North America Rig Count Report - New Report 7.2 MB North America Rotary Rig Count Archive Date Title 08/29/25 North America Rig Count New Report (2013-Aug 2025) 11.7 MB 04/05/24 North America Rotary Rig Count (Jan 2000 - Mar 2024) 691.7 KB 04/05/24 North America Rotary Rig Count Pivot Table (Feb 2011 - Mar 2024) 9.5 MB 04/05/24 Rigs by State (Jan 2000 - Mar 2024) 1.2 MB 04/06/17 North America Rotary Rig Counts through 2016 3.2 MB 04/06/17 U.S. Annual Average by State 1987-2016 70.6 KB 04/06/17 U.S. Monthly Averages by State 1992-2016 827.9 KB 07/02/08 Historical Workover Rig Data - June 2007 back through 1999. BHI no longer publishes this data. 420.3 KB *Effective October 8, 2019, we are sunsetting the Interactive U.S. Rig Count Maps site. You will no longer be able to access the site, but you can still access the same data through the files located above. ",
    "links": [
     "/static-files/05318aca-874f-44c1-90bf-767d8656893f",
