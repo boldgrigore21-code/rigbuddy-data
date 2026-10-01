@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-10-01T03:41:31Z",
+ "updated": "2026-10-01T03:44:13Z",
  "prices": {
   "wti": {
    "v": 96.16,
@@ -21,31 +21,55 @@
    "unit": "$/MMBtu"
   }
  },
- "rigs": {},
+ "rigs": {
+  "us": {
+   "v": 599,
+   "ch": 4
+  },
+  "week": "2026-09-25"
+ },
  "sources": {
   "prices": "U.S. Energy Information Administration (EIA), daily spot prices",
   "rigs": "Baker Hughes Rig Count"
  },
  "errors": [
-  "rigs.us: https://rigcount.bakerhughes.com/ answered 403",
-  "rigs.regions: https://rigcount.bakerhughes.com/na-rig-count answered 403"
+  "rigs.regions: report is for 2024-04-05, US total is for 2026-09-25"
  ],
  "debug": [
   {
    "url": "https://rigcount.bakerhughes.com/",
-   "status": 403,
-   "type": "text/html",
-   "bytes": 376,
-   "text": " Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;rigcount&#46;bakerhughes&#46;com&#47;\" on this server. Reference&#32;&#35;18&#46;291fd717&#46;1790826093&#46;1a6edb3 https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;291fd717&#46;1790826093&#46;1a6edb3 ",
-   "links": []
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "bytes": 18458,
+   "text": " Rig Count Overview &amp; Summary Count | Baker Hughes Rig Count Skip to main navigation Rig Count &nbsp; Menu Home Rig Count Overview North America Rig Count Worldwide Rig Count US Rig Count iPhone/iPad App FAQs Email Alerts Rig Count Overview & Summary Count Rig Count Overview &amp; Summary Count Rig Count Methodology Change - Read More Questions? Connect with the rig count team. Oilfield Knowledge Center Area Last Count Count Change from Prior Count Date of Prior Count Change from Last Year Date of Last Year's Count U.S. 25 Sept 2026 599 +4 18 Sept 2026 +50 26 Sept 2025 Canada 25 Sept 2026 208 +11 18 Sept 2026 +18 26 Sept 2025 International&nbsp; August 2026 1102 +6 July 2026 +26 August 2025 Notice of Rig Count Methodology Update Effective January 2024, the methodology for calculating rig counts in the Kingdom of Saudi Arabia has been updated. From this date forward, only operating rigs within the country are included in the reported figures. This adjustment results in an increase in both the Saudi Arabia and Worldwide Rig Counts. Please note that rig count methodologies for all other countries remain unchanged. If using historical data, please download again prior periods to avoid errors. For further details, please refer to our FAQs here . Baker Hughes has issued rig counts as a service to the petroleum industry since 1944, when Baker Hughes Tool Company began weekly counts of U.S. and Canadian drilling activity. Baker Hughes initiated the monthly international rig count",
+   "links": [
+    "/static-files/05318aca-874f-44c1-90bf-767d8656893f"
+   ]
   },
   {
    "url": "https://rigcount.bakerhughes.com/na-rig-count",
-   "status": 403,
-   "type": "text/html",
-   "bytes": 394,
-   "text": " Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;rigcount&#46;bakerhughes&#46;com&#47;na&#45;rig&#45;count\" on this server. Reference&#32;&#35;18&#46;51fd717&#46;1790826093&#46;4403ef1 https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51fd717&#46;1790826093&#46;4403ef1 ",
-   "links": []
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "bytes": 27407,
+   "text": " North America Rig Count | Baker Hughes Rig Count Skip to main navigation Rig Count &nbsp; Menu Home Rig Count Overview North America Rig Count Worldwide Rig Count US Rig Count iPhone/iPad App FAQs Email Alerts North America Rig Count North America Rig Count Rig Count Methodology Change - Read More Questions? Connect with the rig count team. Oilfield Knowledge Center Reference Maps of North America Oil &amp; Gas Shale Plays (eia.gov) Due to the U.S. holiday on Thursday, this week\u2019s North America rig count will be released at noon Central Time on Wednesday, November 27, 2019. --> Date Title 09/25/26 North America Rig Count Report - New Report 7.2 MB North America Rotary Rig Count Archive Date Title 08/29/25 North America Rig Count New Report (2013-Aug 2025) 11.7 MB 04/05/24 North America Rotary Rig Count (Jan 2000 - Mar 2024) 691.7 KB 04/05/24 North America Rotary Rig Count Pivot Table (Feb 2011 - Mar 2024) 9.5 MB 04/05/24 Rigs by State (Jan 2000 - Mar 2024) 1.2 MB 04/06/17 North America Rotary Rig Counts through 2016 3.2 MB 04/06/17 U.S. Annual Average by State 1987-2016 70.6 KB 04/06/17 U.S. Monthly Averages by State 1992-2016 827.9 KB 07/02/08 Historical Workover Rig Data - June 2007 back through 1999. BHI no longer publishes this data. 420.3 KB *Effective October 8, 2019, we are sunsetting the Interactive U.S. Rig Count Maps site. You will no longer be able to access the site, but you can still access the same data through the files located above. ",
+   "links": [
+    "/static-files/05318aca-874f-44c1-90bf-767d8656893f",
+    "/static-files/f686dcd4-6693-44a3-8a39-4d9a329f0679",
+    "/static-files/e98bcf83-c458-4a88-8f35-4ac4d77628bb",
+    "/static-files/48162dfc-eb21-4612-8b01-72743e3ed420",
+    "/static-files/009c5091-17cd-4816-9bfe-1be2c986b200",
+    "/static-files/e6884ae5-cee8-46a4-8c95-e03091b0aad7",
+    "/static-files/61a54cab-f19e-42c5-9596-d1823737aef7",
+    "/static-files/f6c7c114-b6db-4412-8c3e-8fb07c2eb7c9",
+    "/static-files/4ab04723-b638-4310-afd9-294cfee00e8e",
+    "/static-files/f7750868-d7ee-4b95-be83-5cd5f2326d99"
+   ]
+  },
+  {
+   "url": "https://rigcount.bakerhughes.com/static-files/e98bcf83-c458-4a88-8f35-4ac4d77628bb",
+   "status": 200,
+   "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+   "bytes": 11790192
   }
  ]
 }
