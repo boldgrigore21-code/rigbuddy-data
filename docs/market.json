@@ -1,1 +1,33 @@
-{"v": 1, "updated": null, "prices": {}, "rigs": {}, "errors": ["waiting for first run"]}
+{
+ "v": 1,
+ "updated": "2026-10-01T03:37:47Z",
+ "prices": {
+  "wti": {
+   "v": 96.16,
+   "p": 99.37,
+   "date": "2026-09-29",
+   "unit": "$/bbl"
+  },
+  "brent": {
+   "v": 113.96,
+   "p": 119.97,
+   "date": "2026-09-29",
+   "unit": "$/bbl"
+  },
+  "gas": {
+   "v": 3.18,
+   "p": 3.13,
+   "date": "2026-09-29",
+   "unit": "$/MMBtu"
+  }
+ },
+ "rigs": {},
+ "sources": {
+  "prices": "U.S. Energy Information Administration (EIA), daily spot prices",
+  "rigs": "Baker Hughes Rig Count"
+ },
+ "errors": [
+  "rigs.us: couldn't find the U.S. row on the Baker Hughes home page",
+  "rigs.regions: couldn't find the weekly report link on the North America page"
+ ]
+}
