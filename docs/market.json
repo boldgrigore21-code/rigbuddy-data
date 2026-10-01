@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-10-01T03:37:47Z",
+ "updated": "2026-10-01T03:41:31Z",
  "prices": {
   "wti": {
    "v": 96.16,
@@ -27,7 +27,25 @@
   "rigs": "Baker Hughes Rig Count"
  },
  "errors": [
-  "rigs.us: couldn't find the U.S. row on the Baker Hughes home page",
-  "rigs.regions: couldn't find the weekly report link on the North America page"
+  "rigs.us: https://rigcount.bakerhughes.com/ answered 403",
+  "rigs.regions: https://rigcount.bakerhughes.com/na-rig-count answered 403"
+ ],
+ "debug": [
+  {
+   "url": "https://rigcount.bakerhughes.com/",
+   "status": 403,
+   "type": "text/html",
+   "bytes": 376,
+   "text": " Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;rigcount&#46;bakerhughes&#46;com&#47;\" on this server. Reference&#32;&#35;18&#46;291fd717&#46;1790826093&#46;1a6edb3 https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;291fd717&#46;1790826093&#46;1a6edb3 ",
+   "links": []
+  },
+  {
+   "url": "https://rigcount.bakerhughes.com/na-rig-count",
+   "status": 403,
+   "type": "text/html",
+   "bytes": 394,
+   "text": " Access Denied Access Denied You don't have permission to access \"http&#58;&#47;&#47;rigcount&#46;bakerhughes&#46;com&#47;na&#45;rig&#45;count\" on this server. Reference&#32;&#35;18&#46;51fd717&#46;1790826093&#46;4403ef1 https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51fd717&#46;1790826093&#46;4403ef1 ",
+   "links": []
+  }
  ]
 }
