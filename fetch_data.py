@@ -42,9 +42,41 @@ def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
+BROWSER_HEADERS = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Upgrade-Insecure-Requests": "1",
+}
+_bh_session = None
+
+
+def bh_session():
+    """Baker Hughes turns away plain scripts, so talk to it the way Chrome does."""
+    global _bh_session
+    if _bh_session is None:
+        try:
+            from curl_cffi import requests as creq
+        except ImportError:
+            import subprocess
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", "curl_cffi"], check=False)
+            try:
+                from curl_cffi import requests as creq
+            except ImportError:
+                creq = None
+        if creq is not None:
+            _bh_session = creq.Session(impersonate="chrome")
+            log("Baker Hughes: using browser-like client")
+        else:
+            _bh_session = requests.Session()
+            _bh_session.headers.update(UA)
+            _bh_session.headers.update(BROWSER_HEADERS)
+            log("Baker Hughes: browser-like client unavailable, using plain requests")
+    return _bh_session
+
+
 def bh_get(url, timeout=40):
     """Fetch a Baker Hughes page and note what came back, for troubleshooting."""
-    r = requests.get(url, headers=UA, timeout=timeout)
+    r = bh_session().get(url, timeout=timeout, headers=BROWSER_HEADERS)
     ctype = r.headers.get("content-type", "")
     note = {"url": url, "status": r.status_code, "type": ctype, "bytes": len(r.content)}
     if "html" in ctype or "text" in ctype:
