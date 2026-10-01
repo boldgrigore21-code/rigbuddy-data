@@ -156,24 +156,28 @@ def parse_bh_date(s):
 
 
 def bh_report_url():
-    """Newest weekly report file linked from the North America page."""
+    """Newest weekly report file linked from the North America page.
+
+    The page lists files in a table: Date | Title (the link) | size, so the
+    date for each link sits just before it, after the previous link.
+    """
     html = bh_get(BH_NA).text
-    best = None
+    best, prev_end = None, 0
     for m in re.finditer(r'<a[^>]+href="([^"]*static-files/[0-9a-f\-]{36})"[^>]*>(.*?)</a>', html, re.S | re.I):
-        href, label = m.group(1), re.sub(r"<[^>]+>|\s+", " ", m.group(2))
-        d = re.search(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", label)
-        if not d:
-            # The date can sit just outside the link text
-            around = re.sub(r"<[^>]+>|\s+", " ", html[max(0, m.start() - 300): m.end() + 300])
-            d = re.search(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", around)
-        if not d or "report" not in (label + html[m.end(): m.end() + 200]).lower():
+        href = m.group(1)
+        label = re.sub(r"<[^>]+>|\s+", " ", m.group(2))
+        before = re.sub(r"<[^>]+>|\s+", " ", html[prev_end:m.start()])
+        prev_end = m.end()
+        dates = re.findall(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", before) or re.findall(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", label)
+        if not dates or "report" not in label.lower():
             continue
-        y = int(d.group(3))
-        y = y + 2000 if y < 100 else y
+        mo, dy, yr = dates[-1]
+        yr = int(yr) + 2000 if int(yr) < 100 else int(yr)
         try:
-            when = dt.date(y, int(d.group(1)), int(d.group(2)))
+            when = dt.date(yr, int(mo), int(dy))
         except ValueError:
             continue
+        DEBUG.append({"link": href, "label": label.strip()[:80], "date": when.isoformat()})
         if best is None or when > best[0]:
             best = (when, href if href.startswith("http") else "https://rigcount.bakerhughes.com" + href)
     if not best:
@@ -211,6 +215,7 @@ def find_row(wb, label, sheet_words):
                     nums.append((j, float(c)))
             if not nums:
                 continue
+            DEBUG.append({"row": label, "sheet": ws.title, "cells": [c if isinstance(c, (int, float, str)) else str(c) for c in cells[:12]], "header": header[:12] if header else None})
             # 1) Header tells us where "+/-" is
             if header:
                 chg_cols = [j for j, t in enumerate(header) if j > idx and ("+/-" in t or "change" in t)]
@@ -233,6 +238,7 @@ def bh_regions():
     log("Baker Hughes report:", report_date, url)
     r = bh_get(url, timeout=120)
     wb = openpyxl.load_workbook(io.BytesIO(r.content), read_only=True, data_only=True)
+    DEBUG.append({"sheets": [ws.title for ws in wb.worksheets]})
     out, found_in = {}, {}
     for key, label, words in (("permian", "Permian", ("basin",)), ("nm", "New Mexico", ("state",))):
         val, sheet = find_row(wb, label, words)
