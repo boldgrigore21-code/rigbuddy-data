@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rig Buddy Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* Layout: one readable column under a sticky brand bar, matching the Rig Buddy app's look */
+  :root{
+    --bg:#eef1ef; --surface:#ffffff; --surface-2:#e2e7e3; --border:#c6cdc7;
+    --text:#161a18; --text-dim:#5c655f; --accent:#e05e0e; --teal:#2c8a80;
+    --shadow:0 1px 2px rgba(20,24,22,.07),0 6px 18px rgba(20,24,22,.06);
+    --display:"Oswald","Arial Narrow",sans-serif;
+    --body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#131716; --surface:#1b201f; --surface-2:#232a28; --border:#343e3b;
+      --text:#eef2f0; --text-dim:#9aa6a1; --accent:#ff8c42; --teal:#5fc4b8;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 22px rgba(0,0,0,.35); color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#131716; --surface:#1b201f; --surface-2:#232a28; --border:#343e3b;
+    --text:#eef2f0; --text-dim:#9aa6a1; --accent:#ff8c42; --teal:#5fc4b8;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 22px rgba(0,0,0,.35); color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);padding-inline:16px;padding-block:0 48px}
+  h1,h2{font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;margin:0}
+  header.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:18px 12px;border-bottom:1px solid var(--border);z-index:2}
+  header.top::before{content:"";position:absolute;top:0;left:-16px;right:-16px;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal))}
+  .brand{display:flex;align-items:center;gap:10px;max-width:680px;margin-inline:auto}
+  .brand svg{color:var(--accent);flex:0 0 auto}
+  .brand h1{font-size:1.3rem}
+  .brand .sub{font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+  main{max-width:680px;margin-inline:auto;padding-block:26px 8px;display:flex;flex-direction:column;gap:30px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 12px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 9px;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-dim)}
+  .chip .d{font-family:var(--mono);color:var(--text)}
+  .chip.ok{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 45%,var(--border))}
+  .lede{font-size:1rem;line-height:1.6;margin:0}
+  section{display:flex;flex-direction:column;gap:12px}
+  section h2{font-size:1.02rem;padding-bottom:9px;border-bottom:2px solid var(--accent)}
+  p,li{font-size:.93rem;line-height:1.65;margin:0}
+  ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:6px}
+  strong{font-weight:600}
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:460px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{background:var(--surface-2);color:var(--text-dim);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  td small{display:block;color:var(--text-dim);font-size:.8em}
+  td.yn{font-family:var(--mono);font-weight:600;color:var(--teal);white-space:nowrap}
+  .email{font-family:var(--mono);font-weight:600;color:var(--teal);user-select:all;word-break:break-all}
+  footer{max-width:680px;margin-inline:auto;margin-top:36px;padding-top:20px;border-top:1px solid var(--border);font-size:.82rem;color:var(--text-dim);line-height:1.6}
+</style>
+</head><body>
+
+<header class="top">
+  <div class="brand">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M11 28 L15.5 5 L20 28"/><path d="M12.1 22.4 L18.9 22.4"/><path d="M13.2 16.8 L17.8 16.8"/><path d="M14.2 11.6 L16.8 11.6"/><path d="M6.5 28 L24.5 28"/>
+      <circle cx="15.5" cy="5" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>
+    <div>
+      <h1>Rig Buddy</h1>
+      <div class="sub">Privacy Policy</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="meta">
+    <span class="chip">Effective <span class="d">September 30, 2026</span></span>
+    <span class="chip ok">Your data stays on your phone</span>
+  </div>
+
+  <p class="lede">Rig Buddy is a drilling and rig-floor calculator, hitch tracker and reference app built to work offline in the field. This policy explains what the app does and does not do with your information.</p>
+
+  <section>
+    <h2>The Short Version</h2>
+    <p>Rig Buddy does not collect, sell or share your personal information. There are no accounts and no sign-up. Everything you enter is saved on your own device, and nothing you enter is sent anywhere unless you choose to share or export it yourself. The only thing the app downloads is a public file of oil prices and rig counts, and it sends nothing about you to get it.</p>
+  </section>
+
+  <section>
+    <h2>What The App Stores, And Where</h2>
+    <p>Rig Buddy saves what you enter so it is still there the next time you open the app, the same way a tally book stays in your truck between tours.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>Where it's kept</th><th>Leaves your device?</th></tr></thead>
+        <tbody>
+          <tr><td>Calculator inputs and job info<small>Pump specs, mud weights, depths, kill sheets, trip sheets, bit inventory, reports</small></td><td>On your phone only</td><td class="yn">No</td></tr>
+          <tr><td>Hitch schedule and calendar notes</td><td>On your phone only</td><td class="yn">No</td></tr>
+          <tr><td>Rig photos you add<small>Rig plot, BOP stack, choke manifold, and similar</small></td><td>On your phone only. The app only sees photos you pick.</td><td class="yn">No</td></tr>
+          <tr><td>PDF reports and backup files</td><td>Saved to your phone's Documents › RigBuddy folder when you tap Save</td><td class="yn">Only if you send them</td></tr>
+          <tr><td>Oil prices and rig counts<small>Downloaded for the Market tiles on the home screen</small></td><td>The latest copy is kept on your phone so it still shows with no signal</td><td class="yn">No</td></tr>
+          <tr><td>Account or identity information</td><td>Not collected. There is no account.</td><td class="yn">N/A</td></tr>
+          <tr><td>Location, contacts, microphone</td><td>Not accessed by the app</td><td class="yn">N/A</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Market Data</h2>
+    <p>When you have signal, Rig Buddy downloads one small public file with oil and natural gas prices from the U.S. Energy Information Administration and rig counts from Baker Hughes. The file is hosted on GitHub Pages. The download includes no information about you, your jobs or your device beyond what any website request carries, such as your IP address, which the hosting service handles under its own privacy policy. Rig Buddy does not receive or keep it.</p>
+  </section>
+
+  <section>
+    <h2>Sharing Is Always Your Choice</h2>
+    <p>Rig Buddy has Share buttons and share codes (including QR codes) so you can hand a job off to your relief or send a report. These only run when you tap them, and they use your phone's own share options, such as text, email or Drive. Whatever you share goes only to the people and apps you pick. Rig Buddy never sees or keeps a copy.</p>
+  </section>
+
+  <section>
+    <h2>No Tracking</h2>
+    <p>Rig Buddy does not use analytics, advertising, crash-reporting or tracking services of any kind. Every calculator works without an internet connection; only the Market tiles need signal to update.</p>
+    <p>If a future version adds anything that changes this, such as cloud sync, this policy will be updated before that version is released.</p>
+  </section>
+
+  <section>
+    <h2>Deleting Your Data</h2>
+    <ul>
+      <li>Uninstalling Rig Buddy, or clearing its storage in your phone's settings, erases everything the app has saved.</li>
+      <li>Files you saved to Documents › RigBuddy stay until you delete them yourself.</li>
+      <li>Before you uninstall or switch phones, you can make a backup file from the app's Backup &amp; Restore screen.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Rig Buddy is a professional tool for oilfield and drilling work and is not directed at children. It does not knowingly collect information from anyone, children included.</p>
+  </section>
+
+  <section>
+    <h2>Changes To This Policy</h2>
+    <p>If this policy changes, the effective date above will be updated, and the current version will always be at this page's address.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy or how Rig Buddy handles data can be sent to:</p>
+    <p class="email">dalynsnyder@hotmail.com</p>
+  </section>
+</main>
+
+<footer>Rig Buddy, a drilling and rig-floor calculator. This page is the official privacy policy for the Rig Buddy app on Google Play and the Apple App Store.</footer>
+</body></html>
